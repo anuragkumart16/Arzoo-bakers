@@ -1,0 +1,64 @@
+/* Google fonts import is used for dancing script */
+/* branding is done using 3 fonts which are placed one after other in succession below */
+/* a shodow class is defined for giving shaodw to elements excepts that of header elements */
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Great+Vibes&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0px 0px;
+    padding: 0px 0px;
+}
+header{
+    margin: 10px 10px;
+    box-shadow: 0px 0px 2px 0px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(253, 234, 126);
+
+}
+.navul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.navul li{
+    margin: 0px 20px;
+    padding: 5px 5px;
+}
+
+.navul li a {
+    text-decoration: none;
+    color: black;
+}
+/* branding */
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logotext{
+    font-family: "Dancing Script", cursive;
+    font-size: 12vw
+}
+.logotext2{
+    font-family: "Great Vibes", cursive;
+    font-size: 7vw;
+    color: white;
+}
+.logopunchline{
+    font-family: "Comic Neue", cursive;
+}
+/* shodow element */
+.shadow{
+    box-shadow: 0px 0px 2px 0px;
+    margin: 10px 10px;
+    padding: 20px 20px;
+}
