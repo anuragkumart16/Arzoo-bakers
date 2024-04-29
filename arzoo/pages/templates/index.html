@@ -1,20 +1,22 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arzoo Bakers</title>
     <link rel="stylesheet" href="{% static 'css/index.css'%}">
 </head>
+
 <body>
     <header>
         <nav>
             <ul class="navul">
                 <li><a href="#">Home</a></li>
                 <li><a href="#products">Products</a></li>
-                <li><a href="{% url "contact" %}">Contact</a></li>
-                <li><a href="{% url "about" %}">About Us</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
             </ul>
         </nav>
         <div class="logo">
@@ -24,6 +26,13 @@
         </div>
     </header>
     <main>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+        </ul>
+        {% endif %}
         <div class="quickpicks shadow" id="quickpicks">
             <h2>Quick Picks</h2>
             <div class="card">
@@ -53,7 +62,7 @@
                 <p class="name">Name</p>
             </div>
         </div>
-        <div class="custombake shadow" id="cutombake" >
+        <div class="custombake shadow" id="cutombake">
             <h2>Custom Order</h2>
             <form action="custombake" enctype="multipart/form-data" method="post">
                 {% csrf_token %}
@@ -95,9 +104,11 @@
                 </div>
             </form>
             <div class="row">
-                <p class="pform">You can place any reference link of video or image. We will reach you out for design and cost details </p>
+                <p class="pform">You can place any reference link of video or image. We will reach you out for design
+                    and cost details </p>
             </div>
         </div>
     </main>
 </body>
+
 </html>

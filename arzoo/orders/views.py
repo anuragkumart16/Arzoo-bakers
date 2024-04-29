@@ -1,5 +1,8 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,HttpResponse,redirect
 from .models import *
+from django.contrib import messages
+
+
 
 # Create your views here.
 
@@ -9,10 +12,11 @@ def custombake(request):
         image=request.FILES.get('refimage')
         link=request.POST.get('reflink')
         name=request.POST.get('name')
-        contact=request.POST.get('phonenumber')
+        phone=request.POST.get('phonenumber')
         address=request.POST.get('address')
-        order=customorder(description=description,refimage=image,reflink=link,phone=contact,address=address,name=name)
+        order=customorder(description=description,refimage=image,reflink=link,phone=phone,address=address,name=name)
         order.save()
-        return render(request,'index.html')
+        messages.add_message(request, messages.INFO, "Order has been placed!")
+        return redirect('home')
     else:
         return HttpResponse("else is being executed")

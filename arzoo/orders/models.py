@@ -1,5 +1,5 @@
 from django.db import models
-
+import os
 # Create your models here.
 class customorder(models.Model):
     
@@ -12,3 +12,10 @@ class customorder(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def delete(self, *args, **kwargs):
+        # Delete the associated file from the file system
+        if self.refimage:
+            if os.path.isfile(self.refimage.path):
+                os.remove(self.refimage.path)
+        super().delete(*args, **kwargs)

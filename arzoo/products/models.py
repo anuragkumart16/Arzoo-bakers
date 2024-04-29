@@ -1,6 +1,7 @@
 from django.db import models
 from django.forms import ModelForm
 # Create your models here.
+import os
 
 class popular(models.Model):
     upload = models.FileField(upload_to="uploads/")
@@ -8,6 +9,13 @@ class popular(models.Model):
     
     def __str__(self):
         return self.name
+    
+    def delete(self, *args, **kwargs):
+        # Delete the associated file from the file system
+        if self.upload:
+            if os.path.isfile(self.upload.path):
+                os.remove(self.upload.path)
+        super().delete(*args, **kwargs)
 
 class baked_and_ready(models.Model):
     upload = models.FileField(upload_to="uploads/")
@@ -15,11 +23,11 @@ class baked_and_ready(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def delete(self, *args, **kwargs):
+        # Delete the associated file from the file system
+        if self.upload:
+            if os.path.isfile(self.upload.path):
+                os.remove(self.upload.path)
+        super().delete(*args, **kwargs)
 
-class popularform(ModelForm):
-    model = popular
-    fields =['upload','name']
-
-class baked_and_readyform(ModelForm):
-    model = baked_and_ready
-    fields =['upload','name']
