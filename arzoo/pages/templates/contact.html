@@ -1,11 +1,73 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
+    <!-- <link rel="stylesheet" href="{% static 'css/main.css'%}"> -->
+    <!-- <link rel="stylesheet" href="{% static 'css/cardmanager.css'%}" /> -->
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/basic.css' %}">
 </head>
+
 <body>
-    contacts
+    {% include "navbar-index.html" %}
+    <div class="basic">
+    <h1>
+        Get in Touch
+    </h1>
+
+    <p >Thank you for your interest in Arzoo Bakers! We value your feedback, inquiries, and suggestions.
+        Please feel free to reach out to us using the contact information provided below. Whether you have a question
+        about our products, want to place an order, or simply want to say hello, we're here to assist you.</p>
+
+    <h1>Contact Information:</h1>
+
+    <p >
+    <h2>Address:</h2>
+    <ul >
+        <li>Arzoo Bakers</li>
+        <li>123 Main Street</li>
+        <li>City, State, ZIP Code</li>
+    </ul>
+    </p>
+    <p >
+    <h2>Phone:</h2>
+    <ul >
+        <li>Main Office: (123) 456-7890</li>
+        <li>Customer Service: (123) 789-0123</li>
+    </ul>
+    </p>
+    <p >
+    <h2>Email:</h2>
+    <ul >
+        <li>General Inquiries: info@arzoobakers.com</li>
+        <li>Customer Support: support@arzoobakers.com</li>
+    </ul>
+    </p>
+
+    <h1>Hours Of Operations:</h1>
+    <p >
+    <ul >
+        <li>Monday - Friday: 8:00 AM - 8:00 PM</li>
+        <li>Saturday - Sunday: 9:00 AM - 6:00 PM</li>
+    </ul>
+    </p>
+    <h1>Connect With Us:</h1>
+    <p >Stay up-to-date with the latest news, promotions, and special offers by following us on social
+        media:</p>
+    <p >
+    <ul >
+        <li>Facebook: [link]</li>
+        <li>Instagram: [link]</li>
+        <li>Twitter: [link]</li>
+    </ul>
+    </p>
+    </div>
+    {% include "footer-index.html" %}
 </body>
+
 </html>

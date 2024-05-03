@@ -3,112 +3,25 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arzoo Bakers</title>
-    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+    <link rel="stylesheet" href="{% static 'css/main.css'%}">
+    <link rel="stylesheet" href="{% static 'css/cardmanager.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about-contact.css' %}">
+    <style>
+
+    </style>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul class="navul">
-                <li><a href="#">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="{% url 'contact' %}">Contact</a></li>
-                <li><a href="{% url 'about' %}">About Us</a></li>
-            </ul>
-        </nav>
-        <div class="logo">
-            <p class="logotext">Arzoo</p>
-            <p class="logotext2">Bakers</p>
-            <p class="logopunchline">fresh "n" tasty</p>
-        </div>
-    </header>
-    <main>
-        {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                {% endfor %}
-        </ul>
-        {% endif %}
-        <div class="quickpicks shadow" id="quickpicks">
-            <h2>Quick Picks</h2>
-            <div class="card">
-                <p class="cardname">Custom Order</p>
-            </div>
-            <div class="card">
-                <p class="cardname">Baked and Ready</p>
-            </div>
-            <div class="card">
-                <p class="cardname">Popular Picks</p>
-            </div>
-            <div class="card">
-                <p class="cardname">All Products</p>
-            </div>
-        </div>
-        <div class="popularpicks shadow" id="popularpicks">
-            <h2>Popular Picks</h2>
-            <div class="popularpickcard">
-                <img src="" alt="">
-                <p class="name">Name</p>
-            </div>
-        </div>
-        <div class="Bakedandready shadow" id="bakedandready">
-            <h2>Baked And Ready</h2>
-            <div class="bakedandreadycard">
-                <img src="" alt="">
-                <p class="name">Name</p>
-            </div>
-        </div>
-        <div class="custombake shadow" id="cutombake">
-            <h2>Custom Order</h2>
-            <form action="custombake" enctype="multipart/form-data" method="post">
-                {% csrf_token %}
-                <div class="row">
-                    <textarea name="Description" id="" cols="30" rows="3" placeholder="Description here"></textarea>
-                </div>
-                <div class="row">
-                    <label for="refimage">Reference Image</label>
-                </div>
-                <div class="row">
-                    <input type="file" name="refimage" id="refimage">
-                </div>
-                <div class="row">
-                    <label for="">Reference Resource Link</label>
-                </div>
-                <div class="row">
-                    <input type="text" name="reflink">
-                </div>
-                <div class="row">
-                    <label for="name">Name</label>
-                </div>
-                <div class="row">
-                    <input type="text" name="name">
-                </div>
-                <div class="row">
-                    <label for="phonenumber">Contact Number</label>
-                </div>
-                <div class="row">
-                    <input type="text" name="phonenumber">
-                </div>
-                <div class="row">
-                    <label for="address">Address</label>
-                </div>
-                <div class="row">
-                    <textarea name="address" id="address" cols="30" rows="3"></textarea>
-                </div>
-                <div class="row">
-                    <button type="submit">Submit</button>
-                </div>
-            </form>
-            <div class="row">
-                <p class="pform">You can place any reference link of video or image. We will reach you out for design
-                    and cost details </p>
-            </div>
-        </div>
-    </main>
+    {% include "navbar-index.html" %}
+    {% include "logo-index.html" %}
+    {% include "main-index.html" %}
+    {% include "about-contact-index.html" %}
+    {% include "footer-index.html" %}
 </body>
 
 </html>

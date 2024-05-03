@@ -1,0 +1,29 @@
+{% load static %}
+<footer>
+    <div class="footdiv">
+        <h2>Useful Links</h2>
+        <ul>
+            <li><a href="{% url 'home' %}"><p class="footp">Home</p></a></li>
+            <li><a href="{% url 'product' %}"><p class="footp">Products</p></a></li>
+            <li><a href="{% url 'cart' %}"><p class="footp">Cart</p></a></li>
+            <li><a href="{% url 'about' %}"><p class="footp">About Us</p></a></li>
+            <li><a href="{% url 'contact' %}"><p class="footp">Contact</p></a></li>
+            <li><a href="admin"><p class="footp">Login</p></a></li>
+        </ul>
+    </div>
+    <div class="footdiv" id="centrefootdiv">
+        <h2>Products And Services</h2>
+        <ul>
+            <li><a href="{% url 'product' %}"><p class="footp">Popular</p></a></li>
+            <li><a href="{% url 'product' %}"><p class="footp">Baked And Ready</p></a></li>
+            <li><a href="{% url 'customcakeform' %}"><p class="footp">Custom Cake</p></a></li>
+        </ul>
+    </div>
+    <div class="footdiv">
+        <h2>Code and Design</h2>
+        <ul>
+            <li><p class="footp">Anurag Kumar Tiwari</p></li>
+            <li><a href="https://anuragkumart16.github.io/"><p class="footp">Portfolio Website</p></a></li>
+        </ul>
+    </div>
+</footer>

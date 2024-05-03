@@ -1,0 +1,63 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Cake Form</title>
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+</head>
+<body>
+    <div class=" form" id="cutombake">
+        <div class="form">
+            <form action="custombake" enctype="multipart/form-data" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <label for="refimage">Description</label>
+                </div>
+                <div class="row">
+                    <textarea name="Description" id="" cols="30" rows="3" placeholder="Description here"></textarea>
+                </div>
+                <div class="row">
+                    <label for="refimage">Reference Image</label>
+                </div>
+                <div class="row">
+                    <input type="file" name="refimage" id="refimage">
+                </div>
+                <div class="row">
+                    <label for="">Reference Resource Link</label>
+                </div>
+                <div class="row">
+                    <input type="text" name="reflink">
+                </div>
+                <div class="row">
+                    <label for="name">Name</label>
+                </div>
+                <div class="row">
+                    <input type="text" name="name">
+                </div>
+                <div class="row">
+                    <label for="phonenumber">Contact Number</label>
+                </div>
+                <div class="row">
+                    <input type="text" name="phonenumber">
+                </div>
+                <div class="row">
+                    <label for="address">Address</label>
+                </div>
+                <div class="row">
+                    <textarea name="address" id="address" cols="30" rows="3"></textarea>
+                </div>
+                <div class="row">
+                    <button type="submit">Submit</button>
+                </div>
+                <div class="row">
+                    <p class="pform">You can place any reference link of video or image. We will reach you out for
+                        design
+                        and cost details </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

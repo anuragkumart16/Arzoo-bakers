@@ -22,13 +22,19 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls,name="adminhere"),
     path('',home,name="home"),
     path('about',about,name='about'),
     path('contact',contact,name="contact"),
+    path('product',product,name='product'),
     
     # custom bake order handle
+    path('customcakeform',customcakeform,name='customcakeform'),
     path('custombake',custombake,name='custombake'),
+
+    # handeling cart request
+    path('cart',cart,name='cart'),
+    path('addtocart',addtocart,name="addtocart"),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

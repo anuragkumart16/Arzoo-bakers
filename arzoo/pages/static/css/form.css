@@ -1,0 +1,22 @@
+.form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    width: 25vw;
+    border: 5px solid #FFC255;
+}
+.row{
+    margin: 10px 10px;
+    padding: 5px 5px;
+    width: fit-content;
+}
+
+label{
+    font-family: "Open Sans", sans-serif;
+}
+
+input{
+    height: 30px;
+    width: 240px;
+}

@@ -1,0 +1,26 @@
+{% load static %}
+<header>
+    <nav>
+        <ul class="navul">
+            <a href="{% url 'home' %}">
+                <p class="logo-text">Arzoo Bakers</p></a>
+            
+            <a href="{% url 'home' %}">
+                    <p class="navp">Home</p></a>
+            <a href="{% url 'product' %}">
+                    <p class="navp">Products</p></a>
+            <a href="{% url 'contact' %}">
+                    <p class="navp">Contact</p></a>
+            <a href="{% url 'about' %}">
+                    <p class="navp">About Us</p>
+                </a>
+            <a href="{% url 'cart' %}">
+                    <p class="navp cart">Cart</p>
+                </a>
+        </ul>
+        <div class="loginholder">
+            <a href="admin"><p class="navp">Login</p></a>
+        </div>
+    </nav>
+
+   

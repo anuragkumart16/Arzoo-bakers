@@ -6,6 +6,7 @@ import os
 class popular(models.Model):
     upload = models.FileField(upload_to="uploads/")
     name = models.TextField(max_length=20)
+    price = models.IntegerField(default=200)
     
     def __str__(self):
         return self.name
@@ -20,6 +21,7 @@ class popular(models.Model):
 class baked_and_ready(models.Model):
     upload = models.FileField(upload_to="uploads/")
     name = models.TextField(max_length=20)
+    price = models.IntegerField(default=200)
 
     def __str__(self):
         return self.name

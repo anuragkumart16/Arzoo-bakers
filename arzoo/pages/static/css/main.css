@@ -1,0 +1,70 @@
+main{
+    padding: 30px 20px;
+    background-color: #F79F2F;
+    margin: 25px 22px;
+    border-radius: 3px;
+    border: 5px white solid;
+    box-shadow: 0px 0px 2px 0px;
+    margin-top: 45px;
+}
+
+.subheadings{
+    margin-left: 20px;
+    font-size: 35px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.quickpicks{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    box-shadow: 0px 0px 2px 0px ;
+    margin: 25px 22px;
+    padding: 20px 20px;
+    border-radius: 3px;
+}
+
+.quickcard{
+    height: 9vw;
+    width: 9vw;
+    background-color: #FFBF54;
+    color: black;
+    transition: transform 0.3s ease-in;
+    border-radius: 1000px;
+    border: 1px white solid;
+}
+
+.quickcard:hover{
+    color: white;
+    background-color: #FF924D;
+    transform: scale(1.1);
+    border: 2px white solid;
+}
+
+.custom{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    box-shadow: 0px 0px 2px 0px ;
+    margin: 25px 22px;
+    padding: 20px 20px;
+    border-radius: 3px;
+}
+
+.custom button{
+    margin: 20px 20px;
+    padding: 15px 15px;
+    color: black;
+    background-color: #FFBF54;
+    border-radius: 8px;
+    font-weight: 300;
+    border: 1px white solid;
+}
+
+.custom button:hover{
+    background-color: #FF924D;
+    color: white;
+    border: 1px white solid;
+}

@@ -1,0 +1,60 @@
+{% load static %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+</ul>
+{% endif %}
+<h2 class="subheadings">Quick Picks</h2>
+<div class="quickpicks" id="quickpicks">
+    <button class="quickcard">Custom Baked</button>
+    <button class="quickcard">Popular Picks</button>
+    <button class="quickcard">Baked And Ready</button>
+    <button class="quickcard">Other Products</button>
+</div>
+<main>
+    <h2 class="subheadings">Popular Picks</h2>
+    <div class="cardholder shadow" id="popularpicks">
+
+        {% comment %} for loop {% endcomment %}
+        {% for item in popular_items %}
+        <div class="card">
+            <div class="imageholder">
+                <img src="{{item.upload.url}}" alt="" class="cardimage">
+            </div>
+            <p class="name">{{item.name}}</p>
+        </div>
+        {% endfor %}
+
+    </div>
+    <h2 class="subheadings">Baked And Ready</h2>
+    <div class="cardholder shadow" id="bakedandready">
+
+        {% comment %} for loop here {% endcomment %}
+        {% for item in baked_and_ready_items %}
+        <div class="card" >
+            <div class="imageholder">
+
+                <img src="{{item.upload.url}}" alt="" class="cardimage">
+            </div>
+            <p class="name">{{item.name}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+<h3 class="subheadings">Custom Order</h3>
+<div class="custom">
+    <p class="navp">
+        Want a custom baked cake ? Share the description with us below !
+    </p>
+    <button onclick="custom()">Order Custom Cake</button>
+</div>
+<script>
+    function addtocart() {
+        window.open("{% url 'addtocart' %}");
+    }
+    function custom(){
+        window.location.href='{% url "customcakeform" %}';
+    }
+</script>

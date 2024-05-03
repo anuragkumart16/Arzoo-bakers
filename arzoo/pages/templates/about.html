@@ -1,11 +1,46 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
+    <link rel="stylesheet" href="{% static 'css/main.css'%}">
+    <link rel="stylesheet" href="{% static 'css/cardmanager.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
 </head>
 <body>
-    abouts
+    {% include "navbar-index.html" %}
+    <div class="card">
+        <h1 class="subheadings">About Us</h1>
+        <br>
+        <br>
+        <br>
+        <p class="footp">
+            Welcome to Arzoo Bakers, where every bite tells a story of tradition, quality, and passion. As a family-owned business, we take pride in offering our customers an exquisite array of baked goods crafted with love and dedication. Since our inception in 1995, we've been committed to delivering the finest bakery products that evoke memories and create moments of joy for our cherished patrons.
+        </p>
+        <br>
+        <p class="footp">
+            At the heart of Arzoo Bakers is our founder, Mrs. Aisha Khan, whose culinary prowess and unwavering commitment to excellence have shaped our identity. With a vision to share her culinary heritage with the world, Mrs. Khan embarked on a journey to establish a bakery that would blend traditional recipes with modern techniques. Today, her legacy lives on as we continue to uphold the values of authenticity, innovation, and customer satisfaction.
+        </p>
+        <br>
+        <p class="footp">
+            What sets Arzoo Bakers apart is our relentless pursuit of perfection in every aspect of our operation. From sourcing the freshest ingredients to meticulous craftsmanship, we leave no stone unturned in our quest to delight taste buds and exceed expectations. Our skilled bakers, pastry chefs, and confectioners pour their expertise and creativity into each creation, ensuring that every product bearing the Arzoo Bakers name is a testament to our commitment to excellence.
+        </p>
+        <br>
+        <p class="footp">
+            At Arzoo Bakers, we believe in more than just baking delicious treats; we believe in fostering connections and creating lasting memories. Whether it's a birthday celebration, a wedding reception, or a simple gathering of friends, our baked goods serve as the centerpiece of joyous occasions, bringing people together and spreading happiness one bite at a time. We feel honored to be a part of life's special moments and take great pride in the trust our customers place in us to make their events truly unforgettable
+        </p>
+        <br>
+        <p class="footp">In addition to our dedication to quality and customer satisfaction, Arzoo Bakers is deeply committed to giving back to the community that has supported us throughout the years. Through various philanthropic initiatives and partnerships with local organizations, we strive to make a positive impact and contribute to the well-being of those in need. From sponsoring charitable events to donating surplus baked goods to food banks, we believe in using our resources to make a difference and enrich the lives of others.</p>
+        <br>
+        <p class="footp">As we look to the future, our commitment to excellence remains unwavering. We are continuously exploring new flavors, experimenting with innovative techniques, and expanding our product offerings to delight our customers and stay ahead of evolving tastes and trends. However, amidst all the changes and advancements, one thing will always remain constant – our dedication to preserving the rich legacy and time-honored traditions that define Arzoo Bakers.</p>
+        <br>
+        <p class="footp">Thank you for choosing Arzoo Bakers as your trusted purveyor of fine baked goods. We invite you to indulge in our delectable creations and join us on a journey of flavor, nostalgia, and culinary delight. From our family to yours, we look forward to serving you and creating sweet memories together for many years to come.</p>
+        <br>
+        <br>
+    </div>
+    {% include "footer-index.html" %}
 </body>
 </html>

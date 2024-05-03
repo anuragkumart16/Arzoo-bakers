@@ -1,0 +1,12 @@
+.basic ul{
+    list-style-type: none;
+    margin: 20px 20px;
+}
+
+.basic ul li{
+    margin-top: 10px 10px;
+}
+
+.basic h1,.basic h2, .basic p{
+    margin: 20px 20px;
+}
