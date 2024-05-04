@@ -17,6 +17,6 @@ def custombake(request):
         order=customorder(description=description,refimage=image,reflink=link,phone=phone,address=address,name=name)
         order.save()
         messages.add_message(request, messages.INFO, "Order has been placed!")
-        return redirect('home')
+        return redirect('customcakeform')
     else:
         return HttpResponse("else is being executed")

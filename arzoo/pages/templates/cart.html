@@ -1,25 +1,73 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
+    <link rel="stylesheet" href="{% static 'css/main.css'%}">
+    <link rel="stylesheet" href="{% static 'css/cardmanager.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
 </head>
+
 <body>
-    <h1>Cart</h1>
-    <div class="details">
-        <div class="row">
-            <label for="">Name : </label>
-            <label for="">{{name}}</label>
+    {% include "navbar-index.html" %}
+    <h1 class="subheadings">Cart</h1>
+    <main>
+
+
+        <div class="cartholder">
+            <ol class="cartul" type="1">
+                {% for name in namelist %}
+                <li>{{ name }}</li>
+                {% endfor %}
+            </ol>
+
+
+            <ul class="cartul" type="none">
+                {% for price in pricelist %}
+                <li> Rs. {{ price }}</li>
+                {% endfor %}
+            </ul>
+
+            <ul class="cartul" type="none">
+                {% for index in indexlist %}
+                <li data-index="{{index}}" class="licolor">Remove {{index}}</li>
+                {% endfor %}
+            </ul>
         </div>
-        <div class="row">
-            <label for="">Price :</label>
-            <label for="">{{price}}</label>
-        </div>
-        <div class="row">
-            <button>Pay</button>
-        </div>
-    </div>
+
+
+    </main>
+    {% include "main-index.html" %}
+    {% include "footer-index.html" %}
+    <script>
+        document.querySelectorAll('.licolor').forEach(function(btn) {
+            btn.addEventListener('click',function(){
+                const indexname= btn.getAttribute('data-index');
+                // send data to server
+                fetch('remove_from_cart',{
+                    method: 'POST',
+                    headers:{
+                        'Content-Type':'application/jason',
+                        'X-CSRFToken': '{{ csrf_token }}' 
+                    },
+                    body: JSON.stringify({indexname})
+                }).then(response => {
+                    if (response.ok) {
+                        window.location.href = '/cart';
+                    } else {
+                        console.error('Error deleting from cart');
+                        alert("Error deleting card");
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+            });
+        });
+    </script>
 </body>
+
 </html>

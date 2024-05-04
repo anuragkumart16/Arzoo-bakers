@@ -8,14 +8,14 @@
 {% endif %}
 <h2 class="subheadings">Quick Picks</h2>
 <div class="quickpicks" id="quickpicks">
-    <button class="quickcard">Custom Baked</button>
-    <button class="quickcard">Popular Picks</button>
-    <button class="quickcard">Baked And Ready</button>
-    <button class="quickcard">Other Products</button>
+    <button class="quickcard" onclick="scrollToSection('#custom')">Custom Baked</button>
+    <button class="quickcard" onclick="scrollToSection('#popularpicks')">Popular Picks</button>
+    <button class="quickcard" onclick="scrollToSection('#bakedandready')">Baked And Ready</button>
+    <button class="quickcard" onclick="product()">Other Products</button>
 </div>
 <main>
-    <h2 class="subheadings">Popular Picks</h2>
-    <div class="cardholder shadow" id="popularpicks">
+    <h2 class="subheadings" id="popularpicks">Popular Picks</h2>
+    <div class="cardholder shadow">
 
         {% comment %} for loop {% endcomment %}
         {% for item in popular_items %}
@@ -23,27 +23,43 @@
             <div class="imageholder">
                 <img src="{{item.upload.url}}" alt="" class="cardimage">
             </div>
-            <p class="name">{{item.name}}</p>
+            <p style='font-family:"Open Sans", sans-serif;'>{{item.name}}</p>
+            <button class="addtocart" data-name="{{item.name}}" data-price="{{item.price}}" style="
+                padding: 10px 10px;            
+                background-color: white;
+                color: black;
+                margin: 10px 10px;
+                border-radius: 8px;
+                border: 1px black solid;
+            ">Add to Cart</button>
         </div>
         {% endfor %}
 
     </div>
-    <h2 class="subheadings">Baked And Ready</h2>
-    <div class="cardholder shadow" id="bakedandready">
+    <h2 class="subheadings" id="bakedandready">Baked And Ready</h2>
+    <div class="cardholder shadow">
 
         {% comment %} for loop here {% endcomment %}
         {% for item in baked_and_ready_items %}
-        <div class="card" >
+        <div class="card">
             <div class="imageholder">
 
                 <img src="{{item.upload.url}}" alt="" class="cardimage">
             </div>
-            <p class="name">{{item.name}}</p>
+            <p style='font-family:"Open Sans", sans-serif;'>{{item.name}}</p>
+            <button class="addtocart" data-name="{{item.name}}" data-price="{{item.price}}" style="
+                padding: 10px 10px;
+                background-color: white;
+                color: black;
+                margin: 10px 10px;
+                border-radius: 8px;
+                border: 1px black solid;
+            ">Add to Cart</button>
         </div>
         {% endfor %}
     </div>
 </main>
-<h3 class="subheadings">Custom Order</h3>
+<h3 class="subheadings" id="custom">Custom Order</h3>
 <div class="custom">
     <p class="navp">
         Want a custom baked cake ? Share the description with us below !
@@ -51,10 +67,45 @@
     <button onclick="custom()">Order Custom Cake</button>
 </div>
 <script>
-    function addtocart() {
-        window.open("{% url 'addtocart' %}");
+    function custom() {
+        window.location.href = '{% url "customcakeform" %}';
     }
-    function custom(){
-        window.location.href='{% url "customcakeform" %}';
+    function product() {
+        window.location.href = '{% url "product" %}';
     }
 </script>
+<script>
+    function scrollToSection(sectionId) {
+        const target = document.querySelector(sectionId);
+        target.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+<script>
+    document.querySelectorAll('.addtocart').forEach(function (button) {
+        button.addEventListener('click', function() {
+            const productname = button.getAttribute('data-name');
+            const productprice = button.getAttribute('data-price');
+            // Send the product details to the server
+            fetch('/add-to-cart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}'  // Include CSRF token if using CSRF protection
+                },
+                body: JSON.stringify({ productname, productprice })
+            })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = '/cart';
+                    } else {
+                        console.error('Error adding to cart');
+                        alert("Error adding to card");
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    });
+</script>
+
+
