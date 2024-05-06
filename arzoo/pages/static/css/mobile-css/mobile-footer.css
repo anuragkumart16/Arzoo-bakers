@@ -1,0 +1,13 @@
+@media screen and (max-width: 768px) {
+    footer{
+        flex-direction: column;
+    }
+    #centrefootdiv{
+        border-left: 0px;
+        border-right: 0px;
+        padding: 0px 0px;
+    }
+    .footdiv{
+        margin: 20px 20px;
+    }
+  }
