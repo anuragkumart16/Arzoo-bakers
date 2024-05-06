@@ -1,26 +1,80 @@
 {% load static %}
 <header>
-    <nav>
-        <ul class="navul">
-            <a href="{% url 'home' %}">
+    <nav id="nav" class="nav">
+        <ul class="navul" id="mobile-ul">
+            <a href="{% url 'home' %}" id="logo-text">
                 <p class="logo-text">Arzoo Bakers</p></a>
             
-            <a href="{% url 'home' %}">
-                    <p class="navp">Home</p></a>
-            <a href="{% url 'product' %}">
-                    <p class="navp">Products</p></a>
-            <a href="{% url 'contact' %}">
-                    <p class="navp">Contact</p></a>
-            <a href="{% url 'about' %}">
-                    <p class="navp">About Us</p>
+            <a href="{% url 'home' %}" class="mobile-remove">
+                    <p class="navp" >Home</p></a>
+            <a href="{% url 'product' %}" class="mobile-remove">
+                    <p class="navp" >Products</p></a>
+            <a href="{% url 'contact' %}" class="mobile-remove">
+                    <p class="navp" >Contact</p></a>
+            <a href="{% url 'about' %}" class="mobile-remove">
+                    <p class="navp" >About Us</p>
                 </a>
-            <a href="{% url 'cart' %}">
-                    <p class="navp cart">Cart</p>
+            <a href="{% url 'cart' %}"  class="mobile-remove" >
+                    <p class="navp cart" >Cart</p>
                 </a>
         </ul>
-        <div class="loginholder">
-            <a href="admin"><p class="navp">Login</p></a>
+        <div class="loginholder" id="loginholder">
+            <a href="admin" class="mobile-remove"><p class="navp" >Login</p></a>
+        </div>
+        <div class="icon-div">
+            <img class="icon" id="icon" src="{% static 'images/menu_FILL0_wght400_GRAD0_opsz48.png'%}" alt="" onclick="toggle()">
         </div>
     </nav>
 </header>
-   
+<script>
+     // reference to dom elements
+ 
+ const img=document.querySelector("#icon");
+ 
+//  bussiness
+var a=0;
+ 
+ 
+ // eventlisteners
+//  img.addEventListener('click',toggle);
+ 
+// subfuctions
+function toggle_after (){
+    var navul=document.getElementById("mobile-ul");
+    var nav=document.getElementById("nav");
+    var loginholder=document.getElementById("loginholder");
+    document.querySelectorAll('.mobile-remove').forEach(function(elements){
+        elements.style.display='block';
+    });
+    navul.style.display='block';
+    nav.style.flexDirection='column';
+    nav.style.alignItems='center';
+    loginholder.classList.remove('loginholder');
+    document.getElementById("logo-text").style.display="none";
+    
+}
+function toggle_before(){
+    var navul=document.getElementById("mobile-ul");
+    var nav=document.getElementById("nav");
+    var loginholder=document.getElementById("loginholder");
+    document.querySelectorAll('.mobile-remove').forEach(function(elements){
+        elements.style.display='none';
+    });
+    navul.style.display='flex';
+    document.getElementById("logo-text").style.display="block";
+    nav.style.alignItems="flex-start";
+    nav.style.flexDirection='row';
+    loginholder.classList.add('loginholder');
+}
+ // functions
+ function toggle(){
+    if (a==0){
+        toggle_after()
+        a=1;
+    }
+    else if(a==1) {
+        toggle_before()
+        a=0;
+    }
+ }
+</script>
