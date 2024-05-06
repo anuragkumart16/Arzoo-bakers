@@ -63,8 +63,6 @@ nav a{
     height: fit-content;
     align-self: center;
 }
-.logoimage{
-    height: auto;
-    width: 95vw;
-}
+
+/* .logoimage css is in about.css */
 
