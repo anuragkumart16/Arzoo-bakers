@@ -1,0 +1,30 @@
+@media screen and (max-width: 768px) {
+    .cardholder{
+        margin: 20px 20px;
+        border-top: 5px solid #FFC255;
+        border-bottom: 5px solid #FFC255;
+        border-left: 0px;
+        border-right: 0px;
+        box-shadow: 0px 0px 0px 0px;
+        margin-bottom: 30px;
+        border-radius: 8px;
+    }
+    ::-webkit-scrollbar {
+        width: 0px; /* Width of the entire scrollbar */
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: white; /* Color of the track */
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: white; /* Color of the scroll thumb */
+        border-radius: 10px; /* Roundness of the scroll thumb */
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: white; /* Color of the scroll thumb on hover */
+      }
+    
+    
+  }

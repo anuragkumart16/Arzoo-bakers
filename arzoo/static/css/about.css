@@ -1,0 +1,52 @@
+.about-cardimage{
+    height: auto;
+    width: 60vw;
+}
+
+.about p{
+    margin-right: 30px;
+}
+
+.about-cardholder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logoimage{
+    height: auto;
+    width: 90vw;
+    max-height: 1000px;
+}
+
+.cardholder {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    padding: 20px 20px;
+    margin: 30px 20px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px 0px;
+    border: 5px solid #FFC255;
+    background-color: white;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px; /* Width of the entire scrollbar */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the track */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scroll thumb */
+    border-radius: 5px; /* Roundness of the scroll thumb */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scroll thumb on hover */
+  }

@@ -1,0 +1,23 @@
+.icon-div{
+    display: none;
+}
+
+.mobile-nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .icon-div{
+        display: block;
+    }
+    .mobile-remove{
+        display: none;
+    }
+    #icon{
+        height: 30px;
+        margin-top: 5px;
+    }
+  }

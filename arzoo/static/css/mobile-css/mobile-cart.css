@@ -1,0 +1,10 @@
+@media screen and (max-width: 768px) {
+    .cartul{
+        width: fit-content;
+        padding: 5px 5px;
+        border: 0px ;
+    }
+    .cartholder{
+        padding: 10px 10px;
+    }
+  }

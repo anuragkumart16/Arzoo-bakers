@@ -1,0 +1,23 @@
+.cartholder{
+    display: flex;
+    flex-direction: row;
+    padding: 30px 30px;
+    align-items: center;
+    justify-content: center;
+}
+.cartul{
+    display: flex;
+    flex-direction: column;
+    border: 1px green solid;
+    padding: 30px 30px;
+    width: 40vw;
+    background-color: white;
+}
+.licolor{
+    color: red;
+    text-decoration: underline;
+}
+.cartholder li{
+    margin: 10px 10px;
+    font-family: "Open Sans", sans-serif;
+}

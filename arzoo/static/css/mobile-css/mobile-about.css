@@ -1,0 +1,9 @@
+@media screen and (max-width: 768px) {
+    .about-cardimage{
+        height: auto;
+        width: 60vw;
+    }
+    .about-cardholder{
+        display: block;
+    }
+  }

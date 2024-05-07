@@ -1,0 +1,20 @@
+@media screen and (max-width: 768px) {
+    .quickpicks{
+        flex-direction: column;
+    }
+    .quickcard{
+        height: 20vw;
+        display: flex;
+        padding: 20px 20px;
+        width: 60vw;
+        align-items: center;
+        border-radius: 5px;
+        margin: 20px 20px;
+    }
+    main{
+        padding: 20px 5px;
+        background-color: white;
+        border: 0px solid #F79F2F;
+        
+    }
+  }
