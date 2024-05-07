@@ -16,4 +16,8 @@
     .mobile-remove{
         display: none;
     }
+    #icon{
+        height: 30px;
+        margin-top: 5px;
+    }
   }
