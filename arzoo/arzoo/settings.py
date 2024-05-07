@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ot-_cmqnt_zp805lp4ghz+fe$u)%nz2%@uq79mjyh$xbotx802
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://mindslinger.pythonanywhere.com','http://127.0.0.1:8000/','localhost', '127.0.0.1', '[::1]']
+ALLOWED_HOSTS = ['mindslinger.pythonanywhere.com','http://127.0.0.1:8000/','localhost', '127.0.0.1', '[::1]']
 
 
 # Application definition
